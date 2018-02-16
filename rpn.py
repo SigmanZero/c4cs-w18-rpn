@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
-def addNums(arg1, arg2):
-	return arg1 + arg2
+import operator
 
 operators = {
-	'+': addNums
+	'+': operator.add,
+	'-': operator.sub,
 }
 
 def calculate(arg):
@@ -17,7 +17,7 @@ def calculate(arg):
 			operation = operators[val]
 			arg1 = stack.pop()
 			arg2 = stack.pop()
-			result = operation(arg1, arg2)
+			result = operation(arg2, arg1)
 			stack.append(result)
 		print(stack)
 	if len(stack) != 1:
