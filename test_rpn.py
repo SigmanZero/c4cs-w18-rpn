@@ -15,3 +15,6 @@ class TestOperators(unittest.TestCase):
 	def test_divide(self):
 		result = rpn.calculate("60 20 /")
 		self.assertEqual(3, result)
+	def test_exponate(self):
+		result = rpn.calculate("4 3 ^")
+		self.assertEqual(64, result)
